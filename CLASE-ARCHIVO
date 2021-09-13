@@ -1,0 +1,28 @@
+archivo, f = 'datos.txt', ""
+docentes = [{'nombre': 'Daniel', 'edad': 50, 'fac': 'Ingenieria'},
+    {'nombre': 'Juan', 'edad': 30, 'fac': 'Salud'},
+    {'nombre': 'Yady', 'edad': 40, 'fac': 'Administrativa'}]
+ 
+       
+# Escribir archivo: w - a: write - writeline
+con open (archivo, 'w') como escritor:
+    para i en rango (len (docentes)):
+        linea = ''
+        para clave, valor en docentes [i] .items ():
+            if clave == 'fac':
+                linea = linea + (str (valor) if type (valor) == int else valor) + '\ n'
+            demás:
+                linea = linea + (str (valor) if type (valor) == int else valor) + ';'
+            Writer.writelines (linea)
+
+
+# Leer archivo: r: read - readline - readlines - in
+tratar:
+    f = abrir (archivo, 'r')
+    para linea en f:
+        imprimir (linea [: - 1])
+excepto la excepción como e:
+        print ('Error de archivo:' + str (e))
+finalmente:
+    f.close ()
+    
